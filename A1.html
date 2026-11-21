@@ -1,90 +1,100 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>My Superhero Card</title>
-
+  <title>My Food Menu</title>
   <style>
-
-    /* Typography - background, font and text colour */
     body {
-      background-color: darkblue;
-      color: white;
-      font-family: Arial, sans-serif;
+      font-family: Arial;
+      background: #fff8f0;
+      padding: 30px;
+      text-align: center;
     }
 
-    /* Typography and Text Shadow - superhero name */
-    .hero-name {
-      font-size: 60px;
-      font-weight: bold;
-      color: yellow;
-      text-shadow: 3px 3px orange;
-    }
+    h1 { color: #e65c00; }
 
-    /* Typography and Text Transform - tagline */
-    .tagline {
-      font-style: italic;
-      color: lightblue;
-      text-transform: capitalize;
-    }
-
-    /* Text Transform and Text Decoration - headings */
-    .label {
-      text-transform: uppercase;
-      text-decoration: underline;
-      color: coral;
-    }
-
-    /* Typography - superpowers */
-    .power {
-      font-weight: bold;
-      color: lightgreen;
-    }
-
-    /* Text Decoration - weaknesses */
-    .weakness {
-      text-decoration: line-through;
-      color: gray;
-    }
-
-    /* Transform - rotate the superhero badge */
-    .badge {
+    /* Sibling Selector - styles the paragraph right after h1 */
+    h1 + p {
+      background: #ffe0b2;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #bf360c;
       display: inline-block;
-      font-size: 28px;
+    }
+
+    ul { padding: 0; margin-top: 20px; }
+
+    /* Child Selector - styles only direct li children of ul */
+    ul > li {
+      list-style: none;
+      font-size: 18px;
       font-weight: bold;
-      color: gold;
-      transform: rotate(15deg);
+      color: #5d4037;
+      padding: 10px 20px;
+      margin: 6px auto;
+      width: 260px;
+      background: #fff3e0;
+      border-radius: 8px;
     }
 
-    /* Typography - footer text */
-    .made-by {
-      color: coral;
-      font-style: italic;
+    /* nth-child - highlights the 3rd item as Chef's Special */
+    ul li:nth-child(3) {
+      background: #ffe082;
+      color: #e65c00;
     }
 
+    .desc {
+      color: #555;
+      margin-top: 20px;
+      font-size: 15px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* first-letter - makes the first letter big and bold */
+    .desc::first-letter {
+      font-size: 220%;
+      color: #e65c00;
+      font-weight: bold;
+    }
+
+    .links { margin-top: 25px; }
+
+    /* Hover Effect - links glow when mouse moves over them */
+    a {
+      color: #e65c00;
+      text-decoration: none;
+      font-size: 15px;
+      margin: 0 12px;
+      padding: 8px 18px;
+      border: 2px solid #e65c00;
+      border-radius: 8px;
+    }
+
+    a:hover {
+      background: #e65c00;
+      color: white;
+    }
   </style>
 </head>
-
 <body>
+  <h1>My Food Menu</h1>
+  <p>Pick your favourite dish and dig in!</p>
 
-  <h1 class="hero-name">Thunder Kid</h1>
+  <ul>
+    <li>Pizza</li>
+    <li>Burger</li>
+    <li>Tacos — Chef's Special!</li>
+    <li>Noodles</li>
+    <li>Ice Cream</li>
+  </ul>
 
-  <p class="tagline">the most powerful hero in the school</p>
+  <p class="desc">Every dish on this menu is made with love and
+  loads of flavour. Try them all and find your favourite!</p>
 
-  <h2 class="label">super powers</h2>
-
-  <p class="power">Can run faster than a cheetah</p>
-  <p class="power">Can lift a school bus</p>
-
-  <h2 class="label">weaknesses</h2>
-
-  <p class="weakness">Maths homework</p>
-  <p class="weakness">Broccoli</p>
-
-  <p class="badge">Top Hero</p>
-
-  <p class="made-by">Created by ___________</p>
-
+  <div class="links">
+    <a href="#">Order Now</a>
+    <a href="#">See More</a>
+  </div>
 </body>
 </html>
